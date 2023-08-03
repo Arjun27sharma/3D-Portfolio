@@ -1,0 +1,142 @@
+/* CSS for the centered signup form with dark theme */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1a1a1a; /* Dark background color */
+  color: #fff; /* Text color */
+}
+
+.signup-wrapper {
+  background-color: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.signup-container {
+  /* max-width: 800px; */
+  padding: 20px;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  width: 50%;
+}
+
+.signup-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.divider {
+  margin: 40px 0px;
+  border-top: 1px solid #444;
+}
+
+.form-group textarea,
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #444;
+  color: #fff;
+}
+
+.form-group input::placeholder {
+  color: #bbb;
+}
+
+button {
+  /* background-color: #4caf50; */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="button"] {
+  background-color: #8c00ff;
+  padding: 5px 10px;
+}
+
+button[type="submit"] {
+  /* background-color: #8c00ff; */
+  background-color: #007bff;
+  padding: 10px 20px;
+
+
+    /* background-color: #8c00ff; */
+    background-color: #007bff;
+    padding: 10px 80px; /* Adjust width of the submit button */
+    display: block; /* Center the submit button */
+    margin: 0 auto; /* Center the submit button */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Additional styling for dynamic sections */
+.work-experience-item,
+.skill-item,
+.project-item,
+.testimonial-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+/* Customization for form groups within dynamic sections */
+.work-experience-item .form-group,
+.skill-item .form-group,
+.project-item .form-group,
+.testimonial-item .form-group {
+  margin-bottom: 10px;
+}
+
+/* Center the ToastContainer */
+.toastify-container {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+.signup-container span {
+  margin-top: 16px;
+  text-align: center;
+  display: block; /* Center the submit button */
+  margin: 0 auto; /* Center the submit button */
+}
+
+.signup-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-container a:hover {
+  text-decoration: underline;
+}
+
+
+.group-item{
+  /* margin-bottom: 80px; */
+  margin: 50px 0px;
+}

@@ -4,7 +4,7 @@ import { styles } from '../style'
 import { navLinks } from '../constants'
 import { logo, menu, close } from '../assets'
 
-const Navbar = () => {
+const Navbar = ({userName}) => {
 
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
@@ -21,7 +21,7 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className='w-9 h-9 object-contain' />
-          <p className='text-white text-[18px] font-bold cursor-pointer'>Arjun Sharma</p>
+          <p className='text-white text-[18px] font-bold cursor-pointer'>{userName}</p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((link) => (

@@ -6,7 +6,7 @@ import { fadeIn,textVariant } from '../utils/motion'
 import { testimonials } from '../constants'
 
 
-const FeedbackCard = ({index, testimonial, name, designation, company, image}) => (
+const FeedbackCard = ({index, testimonial, name, designation, company, imageUrl}) => (
   <motion.div
     variants={fadeIn("", "spring" ,index*0.5, 0.75)}
     className='bg-black-200 p-10 rounded-3xl xs:w-[360px] w-full'
@@ -27,7 +27,7 @@ const FeedbackCard = ({index, testimonial, name, designation, company, image}) =
         </div>
 
         <img 
-          src={image}
+          src={imageUrl}
           alt={`feedback-by-${name}`}
           className='w-10 h-10 rounded-full object-cover'
         />
@@ -37,7 +37,7 @@ const FeedbackCard = ({index, testimonial, name, designation, company, image}) =
   </motion.div>
 )
 
-const Feedbacks = () => {
+const Feedbacks = ({testimonials}) => {
   return (
     <div className='mt-12 bg-black-100 rounded-[20px]'>
       <div

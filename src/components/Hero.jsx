@@ -2,7 +2,7 @@ import {motion} from 'framer-motion'
 import { styles } from '../style'
 import { ComputersCanvas } from './canvas'
 
-const Hero = () => {
+const Hero = ({username, tagline1, tagline2}) => {
   return (
     <section className='relative w-full h-screen mx-auto'>
       <div
@@ -16,10 +16,10 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>Hi, I'm 
-          <span className='text-[#915eff]'> Arjun</span>
+          <span className='text-[#915eff]'> {username}</span>
           </h1>
 
-          <p className={`text-white-100 mt-2 ${styles.heroSubText}`}>I develope 3D visuals, user <br /> interfaces and web applications</p>
+          <p className={`text-white-100 mt-2 ${styles.heroSubText}`}>{tagline1} <br /> {tagline2}</p>
         </div>
       </div>
 

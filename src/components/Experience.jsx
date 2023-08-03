@@ -7,15 +7,28 @@ import { SectionWrapper } from "../hoc"
 import { textVariant } from "../utils/motion"
 
 
-const ExperienceCard = ({experience}) => (
+const formatDate = (dateString) => {
+  const options = { year: 'numeric', month: 'long' };
+  const date = new Date(dateString);
+  return date.toLocaleString('en-US', options);
+};
+
+
+const ExperienceCard = ({experience}) => {
+  const startDate = (formatDate(experience.startDate))
+  const endDate = experience.endDate ? (formatDate(experience.endDate)) : "Present"
+  const wrokExDate = `${startDate} - ${endDate}`
+  
+  return(
+  
   <VerticalTimelineElement
   contentStyle={{background: '#1d1836', color: '#fff'}}
   contentArrowStyle={{borderRight: '7px solid  #232631'}}
-  date={experience.date}
+  date={wrokExDate}
   iconStyle={{background : experience.iconBg}}
   icon={
     <div className="flex justify-center items-center w-full h-full">
-      <img src={experience.icon} alt={experience.company_name} className="w-[60%] h-[60%] object-contain"/>
+      <img src={experience.companyImgUrl} alt={experience.company_name} className="w-[60%] h-[60%] object-contain"/>
     </div>
   }
   >
@@ -24,7 +37,7 @@ const ExperienceCard = ({experience}) => (
       <p className="text-secondary text-[16px] font-semibold" style={{margin : 0}} >{experience.company_name}</p>
     </div>
 
-    <ul className="mt-5 list-disc ml-5 space-y-2">
+    {/* <ul className="mt-5 list-disc ml-5 space-y-2">
       {experience.points.map((point, index) => (
         <li
           key={`experience-point-${index}`}
@@ -33,12 +46,15 @@ const ExperienceCard = ({experience}) => (
           {point}
         </li>
       ))}
-    </ul>
+    </ul> */}
+
+    <p>{experience.desc}</p>
 
   </VerticalTimelineElement>
-)
+)}
 
-const Experience = () => {
+const Experience = ({experiences}) => {
+  console.log(experiences)
   return (
     <>
       <motion.div

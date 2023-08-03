@@ -1,0 +1,81 @@
+/* CSS for the login form with dark theme */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #222;
+    color: #fff;
+  }
+  
+  .form_container {
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    width: 400px;
+  }
+
+  .field{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form_container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form_container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form_container label {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  
+  .form_container input {
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 14px;
+    margin-bottom: 16px;
+    color: #fff;
+    background-color: #444;
+  }
+  
+  .form_container input::placeholder {
+    color: #bbb;
+  }
+  
+  .form_container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .form_container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .form_container span {
+    margin-top: 16px;
+    text-align: center;
+  }
+  
+  .form_container a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .form_container a:hover {
+    text-decoration: underline;
+  }
+  
