@@ -4,12 +4,15 @@ import { Route, Routes } from "react-router-dom";
 import { Login, Signup } from "./pages";
 import Home from "./pages/Home";
 import UpdateProfile from "./pages/Update";
+import PublicProfile from "./pages/PublicProfile";
 
 const App = () => {
   return (
     <BrowserRouter>
 
             <Routes>
+              
+        <Route path="/:userId" element={<PublicProfile />} />
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

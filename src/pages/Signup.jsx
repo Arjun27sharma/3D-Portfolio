@@ -1584,42 +1584,16 @@ const Signup = () => {
 
 
                   <div className="form-group">
-                    <label>Icon</label>
-                    <select
+                    <label>Icon Url</label>
+                    {/* write the input  */}
+                    <input
+                      type="text"
                       name={`skills.${index}.icon`}
                       value={skill.icon}
                       onChange={handleOnChange}
-                    >
-                      <option value="html">HTML</option>
-                      <option value="css">CSS</option>
-                      <option value="javascript">JavaScript</option>
-                      <option value="typescript">TypeScript</option>
-                      <option value="reactjs">ReactJS</option>
-                      <option value="redux">Redux</option>
-                      <option value="tailwind">Tailwind</option>
-                      <option value="nodejs">Node.js</option>
-                      <option value="mongodb">MongoDB</option>
-                      <option value="threejs">Three.js</option>
-                      <option value="git">Git</option>
-                      <option value="figma">Figma</option>
-                      <option value="docker">Docker</option>
-                    </select>
+                    />
                   </div>
 
-
-
-                  <div className="form-group">
-                    <label>Proficiency</label>
-                    <select
-                      name={`skills.${index}.proficiency`}
-                      value={skill.proficiency}
-                      onChange={handleOnChange}
-                    >
-                      <option value="Beginner">Beginner</option>
-                      <option value="Intermediate">Intermediate</option>
-                      <option value="Advanced">Advanced</option>
-                    </select>
-                  </div>
 
 
                 </div>
@@ -1633,7 +1607,6 @@ const Signup = () => {
                       ...prevData.skills,
                       {
                         name: "",
-                        proficiency: "Beginner",
                         icon: "",
                       },
                     ],

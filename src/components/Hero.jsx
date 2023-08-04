@@ -19,7 +19,7 @@ const Hero = ({username, tagline1, tagline2}) => {
           <span className='text-[#915eff]'> {username}</span>
           </h1>
 
-          <p className={`text-white-100 mt-2 ${styles.heroSubText}`}>{tagline1} <br /> {tagline2}</p>
+          <p className={`text-white-100 mt-2 ${styles.heroSubText} w-[50vw]`}>{tagline1} <br /> {tagline2}</p>
         </div>
       </div>
 

@@ -1,10 +1,45 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { styles } from '../style'
-import { navLinks } from '../constants'
+// import { navLinks } from '../constants'
 import { logo, menu, close } from '../assets'
 
-const Navbar = ({userName}) => {
+export const navLinks = [
+  {
+    id: "about",
+    title: "About",
+  },
+  {
+    id: "work",
+    title: "Work",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+  },
+  {
+    id: "updateProfile",
+    title: "Update Profile",
+  }
+];
+export const publicNavLinks = [
+  {
+    id: "about",
+    title: "About",
+  },
+  {
+    id: "work",
+    title: "Work",
+  },
+  {
+    id: "contact",
+    title: "Contact",
+  }
+];
+
+
+const Navbar = ({userName, publicProfile}) => {
+  const NavtoMap = publicProfile ? publicNavLinks : navLinks
 
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
@@ -24,10 +59,10 @@ const Navbar = ({userName}) => {
           <p className='text-white text-[18px] font-bold cursor-pointer'>{userName}</p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
-          {navLinks.map((link) => (
+          {NavtoMap.map((link) => (
             <li>
               <a
-                href={`#${link.id}`}
+                href={link.id === "updateProfile" ? "/update" :`#${link.id}`}
                 className={`${active === link.title ? 'text-white' : 'text-secondary'} hover:text-white text-[18px] font-medium cursor-pointer`}
                 onClick={() => setActive(link.title)}
               >

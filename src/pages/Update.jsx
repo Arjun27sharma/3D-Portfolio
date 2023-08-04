@@ -98,6 +98,9 @@ const fetchUserData = async () => {
     try {
       const response = await axios.get("http://localhost:4000/user-details", {withCredentials: true});
       const { user } = response.data;
+
+
+      console.log(user)
       
       // Convert the date format for workExperience startDate and endDate
       const updatedWorkExperience = user.workExperience.map((workExp) => ({
@@ -316,27 +319,12 @@ const handleOnChange = (e) => {
             </div>
             <div className="form-group">
               <label>Icon</label>
-              <select
+              <input
+                type="text"
                 name={`skills.${index}.icon`}
                 value={skill.icon}
                 onChange={handleOnChange}
-              >
-                <option value="html">HTML</option>
-                <option value="css">CSS</option>
-                {/* Add more options for icons */}
-              </select>
-            </div>
-            <div className="form-group">
-              <label>Proficiency</label>
-              <select
-                name={`skills.${index}.proficiency`}
-                value={skill.proficiency}
-                onChange={handleOnChange}
-              >
-                <option value="Beginner">Beginner</option>
-                <option value="Intermediate">Intermediate</option>
-                <option value="Advanced">Advanced</option>
-              </select>
+              />
             </div>
           </div>
         ))}
@@ -349,7 +337,6 @@ const handleOnChange = (e) => {
                 ...prevData.skills,
                 {
                   name: "",
-                  proficiency: "Beginner",
                   icon: "",
                 },
               ],
