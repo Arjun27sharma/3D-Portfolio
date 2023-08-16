@@ -63,8 +63,8 @@ const UserDetails = ({publicProfile}) => {
         <div>
         <div className="relative z-0 bg-primary">
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar userName={user.username} publicProfile={publicProfile}/>
-          <Hero username={user.username} tagline1={"I develope websites for people 3d and interactive websites "}/>
+          <Navbar userName={user.username} publicProfile={publicProfile} logo={user.logo} publicLink={user._id}/>
+          <Hero username={user.username} tagline1={user.tagline}/>
         </div>
         <About overview={user.about_desc} services={user.services}/>
         <Experience experiences={user.workExperience}/>

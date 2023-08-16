@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { styles } from '../style'
 // import { navLinks } from '../constants'
 import { logo, menu, close } from '../assets'
+import { CopyToClipboard } from "react-copy-to-clipboard";
+
 
 export const navLinks = [
   {
@@ -17,10 +19,6 @@ export const navLinks = [
     id: "contact",
     title: "Contact",
   },
-  {
-    id: "updateProfile",
-    title: "Update Profile",
-  }
 ];
 export const publicNavLinks = [
   {
@@ -38,7 +36,18 @@ export const publicNavLinks = [
 ];
 
 
-const Navbar = ({userName, publicProfile}) => {
+const Navbar = ({ userName, logo, publicProfile, publicLink }) => {
+
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    setCopied(true);
+    // Optionally, you can show a notification or do something else to indicate that the link has been copied.
+    // For example, you can use a toast library like "react-toastify" to show a toast message:
+    // import { toast } from "react-toastify";
+    // toast.success("Link copied to clipboard!", { position: "top-right" });
+  };
+
   const NavtoMap = publicProfile ? publicNavLinks : navLinks
 
   const [active, setActive] = useState("");
@@ -62,7 +71,7 @@ const Navbar = ({userName, publicProfile}) => {
           {NavtoMap.map((link) => (
             <li>
               <a
-                href={link.id === "updateProfile" ? "/update" :`#${link.id}`}
+                href={`#${link.id}`}
                 className={`${active === link.title ? 'text-white' : 'text-secondary'} hover:text-white text-[18px] font-medium cursor-pointer`}
                 onClick={() => setActive(link.title)}
               >
@@ -70,7 +79,34 @@ const Navbar = ({userName, publicProfile}) => {
               </a>
             </li>
           ))}
+
+{!publicProfile && (
+  <>
+  <li className="cursor-pointer text-secondary text-[18px] font-medium">
+    <a href="/update">
+    Update Profile
+    </a>
+    
+    </li>
+        <CopyToClipboard text={"http://localhost:5173/"+publicLink} onCopy={handleCopy}>
+          <li className={copied ? "text-green-500 cursor-pointer text-[18px] font-medium" : "text-secondary cursor-pointer text-[18px] font-medium"}>
+            {copied ? "Link Copied!" : "Copy Portfolio Link"}
+          </li>
+        </CopyToClipboard>
+
+        
+
+
+        </>
+      )}
         </ul>
+
+        {/* {!publicProfile &&
+          <a class="" href={publicLink}>Portfolio Link</a>} */}
+
+
+
+
 
         <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
@@ -90,7 +126,8 @@ const Navbar = ({userName, publicProfile}) => {
                     className={`${active === link.title ? 'text-white' : 'text-secondary'} font-poppins font-medium cursor-pointer text-[16px]`}
                     onClick={() => {
                       setActive(link.title)
-                      setToggle(!toggle)}
+                      setToggle(!toggle)
+                    }
                     }
                   >
                     {link.title}

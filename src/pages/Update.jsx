@@ -7,7 +7,9 @@ const UpdateProfile = () => {
     email: "",
     password: "",
     username: "",
+    logo: "",
     about_desc: "",
+    tagline: "",
     workExperience: [
       {
         title: "",
@@ -214,7 +216,32 @@ const handleOnChange = (e) => {
             required
           />
         </div>
+        <div className="form-group">
+          <label>Username</label>
+          <input
+            placeholder="Enter your Logo Url"
+            type="text"
+            name="logo"
+            value={formData.logo}
+            onChange={handleOnChange}
+            required
+          />
+        </div>
       </div>
+
+
+              {/* tagline */}
+              <div className="form-group">
+          <label>Tagline</label>
+          <input
+            placeholder="Enter your tagline"
+            type="text"
+            name="tagline"
+            value={formData.tagline}
+            onChange={handleOnChange}
+            required
+          />
+        </div>
 
       {/* Work Experience */}
       <div className="group-item">
